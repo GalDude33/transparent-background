@@ -4,8 +4,7 @@ import tqdm
 import gdown
 import torch
 import warnings
-import pyvirtualcam
-
+  
 import numpy as np
 import torch.nn.functional as F
 import torchvision.transforms as transforms
@@ -211,6 +210,7 @@ def console():
         elif _format == 'Video' and writer is not None:
             writer.write(cv2.cvtColor(out, cv2.COLOR_BGR2RGB))
         elif _format == 'Webcam':
+            import pyvirtualcam
             if vcam is not None:
                 vcam.send(out)
                 vcam.sleep_until_next_frame()
